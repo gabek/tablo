@@ -7,19 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51866582D8C1E229BC62919F /* Pods_tablo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3556AAA0CD8969C239F217F2 /* Pods_tablo.framework */; };
 		A0452F571CEA095C0026828B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0452F561CEA095C0026828B /* AppDelegate.swift */; };
-		A0452F591CEA095C0026828B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0452F581CEA095C0026828B /* ViewController.swift */; };
-		A0452F5C1CEA095C0026828B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0452F5A1CEA095C0026828B /* Main.storyboard */; };
+		A0452F591CEA095C0026828B /* ChannelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0452F581CEA095C0026828B /* ChannelSelectionViewController.swift */; };
 		A0452F5E1CEA095C0026828B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0452F5D1CEA095C0026828B /* Assets.xcassets */; };
+		A0452FD81CF167890026828B /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0452FD71CF167890026828B /* ChannelCell.swift */; };
+		A0452FDC1CF168510026828B /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0452FDB1CF168510026828B /* Channel.swift */; };
+		A0452FDE1CF168BA0026828B /* TabloManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0452FDD1CF168BA0026828B /* TabloManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3556AAA0CD8969C239F217F2 /* Pods_tablo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tablo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		563D0ABEBA98F3D43DDA7726 /* Pods-tablo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tablo.release.xcconfig"; path = "Pods/Target Support Files/Pods-tablo/Pods-tablo.release.xcconfig"; sourceTree = "<group>"; };
 		A0452F531CEA095C0026828B /* tablo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tablo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0452F561CEA095C0026828B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A0452F581CEA095C0026828B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A0452F5B1CEA095C0026828B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A0452F581CEA095C0026828B /* ChannelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelSelectionViewController.swift; sourceTree = "<group>"; };
 		A0452F5D1CEA095C0026828B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0452F5F1CEA095C0026828B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0452FD71CF167890026828B /* ChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
+		A0452FDB1CF168510026828B /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		A0452FDD1CF168BA0026828B /* TabloManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabloManager.swift; sourceTree = "<group>"; };
+		E5D0D5A2FB57F8D4BE6700AF /* Pods-tablo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tablo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tablo/Pods-tablo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51866582D8C1E229BC62919F /* Pods_tablo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02EA07D9CE2CEE06F05A161F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5D0D5A2FB57F8D4BE6700AF /* Pods-tablo.debug.xcconfig */,
+				563D0ABEBA98F3D43DDA7726 /* Pods-tablo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A0452F4A1CEA095C0026828B = {
 			isa = PBXGroup;
 			children = (
 				A0452F551CEA095C0026828B /* tablo */,
 				A0452F541CEA095C0026828B /* Products */,
+				02EA07D9CE2CEE06F05A161F /* Pods */,
+				AB000201F3F68BDF7E583446 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,12 +73,22 @@
 			isa = PBXGroup;
 			children = (
 				A0452F561CEA095C0026828B /* AppDelegate.swift */,
-				A0452F581CEA095C0026828B /* ViewController.swift */,
-				A0452F5A1CEA095C0026828B /* Main.storyboard */,
+				A0452F581CEA095C0026828B /* ChannelSelectionViewController.swift */,
 				A0452F5D1CEA095C0026828B /* Assets.xcassets */,
 				A0452F5F1CEA095C0026828B /* Info.plist */,
+				A0452FD71CF167890026828B /* ChannelCell.swift */,
+				A0452FDB1CF168510026828B /* Channel.swift */,
+				A0452FDD1CF168BA0026828B /* TabloManager.swift */,
 			);
 			path = tablo;
+			sourceTree = "<group>";
+		};
+		AB000201F3F68BDF7E583446 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3556AAA0CD8969C239F217F2 /* Pods_tablo.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -68,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0452F621CEA095C0026828B /* Build configuration list for PBXNativeTarget "tablo" */;
 			buildPhases = (
+				D7DDF73B6A0D17913E8D4AFF /* Check Pods Manifest.lock */,
 				A0452F4F1CEA095C0026828B /* Sources */,
 				A0452F501CEA095C0026828B /* Frameworks */,
 				A0452F511CEA095C0026828B /* Resources */,
+				436F2AC064D37C7C921B1FF5 /* Embed Pods Frameworks */,
+				33DE14673338BEA96A86E84A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,34 +153,73 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0452F5E1CEA095C0026828B /* Assets.xcassets in Resources */,
-				A0452F5C1CEA095C0026828B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33DE14673338BEA96A86E84A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tablo/Pods-tablo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		436F2AC064D37C7C921B1FF5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tablo/Pods-tablo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7DDF73B6A0D17913E8D4AFF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A0452F4F1CEA095C0026828B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0452F591CEA095C0026828B /* ViewController.swift in Sources */,
+				A0452FDE1CF168BA0026828B /* TabloManager.swift in Sources */,
+				A0452F591CEA095C0026828B /* ChannelSelectionViewController.swift in Sources */,
+				A0452FDC1CF168510026828B /* Channel.swift in Sources */,
+				A0452FD81CF167890026828B /* ChannelCell.swift in Sources */,
 				A0452F571CEA095C0026828B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		A0452F5A1CEA095C0026828B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A0452F5B1CEA095C0026828B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A0452F601CEA095C0026828B /* Debug */ = {
@@ -235,6 +307,7 @@
 		};
 		A0452F631CEA095C0026828B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5D0D5A2FB57F8D4BE6700AF /* Pods-tablo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -247,6 +320,7 @@
 		};
 		A0452F641CEA095C0026828B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 563D0ABEBA98F3D43DDA7726 /* Pods-tablo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -276,6 +350,7 @@
 				A0452F641CEA095C0026828B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
