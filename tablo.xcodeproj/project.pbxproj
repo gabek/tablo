@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		51866582D8C1E229BC62919F /* Pods_tablo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3556AAA0CD8969C239F217F2 /* Pods_tablo.framework */; };
+		A04397951CF24F2700F761ED /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04397941CF24F2700F761ED /* VideoViewController.swift */; };
+		A04397971CF2585900F761ED /* ChannelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04397961CF2585900F761ED /* ChannelInfo.swift */; };
 		A0452F571CEA095C0026828B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0452F561CEA095C0026828B /* AppDelegate.swift */; };
 		A0452F591CEA095C0026828B /* ChannelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0452F581CEA095C0026828B /* ChannelSelectionViewController.swift */; };
 		A0452F5E1CEA095C0026828B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0452F5D1CEA095C0026828B /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* Begin PBXFileReference section */
 		3556AAA0CD8969C239F217F2 /* Pods_tablo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tablo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		563D0ABEBA98F3D43DDA7726 /* Pods-tablo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tablo.release.xcconfig"; path = "Pods/Target Support Files/Pods-tablo/Pods-tablo.release.xcconfig"; sourceTree = "<group>"; };
+		A04397941CF24F2700F761ED /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		A04397961CF2585900F761ED /* ChannelInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelInfo.swift; sourceTree = "<group>"; };
 		A0452F531CEA095C0026828B /* tablo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tablo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0452F561CEA095C0026828B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0452F581CEA095C0026828B /* ChannelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelSelectionViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 				A0452FD71CF167890026828B /* ChannelCell.swift */,
 				A0452FDB1CF168510026828B /* Channel.swift */,
 				A0452FDD1CF168BA0026828B /* TabloManager.swift */,
+				A04397941CF24F2700F761ED /* VideoViewController.swift */,
+				A04397961CF2585900F761ED /* ChannelInfo.swift */,
 			);
 			path = tablo;
 			sourceTree = "<group>";
@@ -213,8 +219,10 @@
 			files = (
 				A0452FDE1CF168BA0026828B /* TabloManager.swift in Sources */,
 				A0452F591CEA095C0026828B /* ChannelSelectionViewController.swift in Sources */,
+				A04397951CF24F2700F761ED /* VideoViewController.swift in Sources */,
 				A0452FDC1CF168510026828B /* Channel.swift in Sources */,
 				A0452FD81CF167890026828B /* ChannelCell.swift in Sources */,
+				A04397971CF2585900F761ED /* ChannelInfo.swift in Sources */,
 				A0452F571CEA095C0026828B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,7 +20,7 @@ struct TabloManager {
     func getStations(completion: (channels: [Channel]) -> Void) {
         let url = device + ":18080/plex/ch_ids"
         
-        manager.GET(url, parameters: nil, success: { (task, result) in
+        manager.GET(url, parameters: nil, progress: nil, success: { (task, result) in
             // Success            
             if let ids = result?["ids"] as? [Int] {
                 let channels = self.channelsFromIds(ids)
@@ -55,8 +55,8 @@ struct TabloManager {
         let params = ["channelid": id]
         let command = ["jsonrpc": 2.0, "id": 1, "method": "/player/watchLive", "params": params]
         
-        manager.POST(url, parameters: command, success: { (task, result) in            
-            if let result = result, stream = result["result"]?!["relativePlaylistURL"] as? String {
+        manager.POST(url, parameters: command, progress: nil, success: { (task, result) in
+            if let result = result, stream = result["result"]??["relativePlaylistURL"] as? String {
                 let fullStream = self.device + stream
                 completion(stream: fullStream)
             }
@@ -70,7 +70,7 @@ struct TabloManager {
     private func getStationNameForId(id: Int, completion: (name: String) -> Void) {
         let url = device + ":18080/plex/ch_info?id=" + String(id)
         
-        manager.GET(url, parameters: nil, success: { (task, result) in
+        manager.GET(url, parameters: nil, progress: nil, success: { (task, result) in
             guard let metadata = result?["meta"] else {
                 return completion(name: "")
             }
@@ -85,7 +85,19 @@ struct TabloManager {
             }) { (task, error) in
                 print(error)
         }
+    }
+    
+    func nowPlayingOnStation(id: Int, completion: (info: ChannelInfo) -> Void) {
+        let url = device + ":18080/plex/ch_epg?id=" + String(id)
         
+        manager.GET(url, parameters: nil, progress: nil, success: { (task, result) in
+            if let result = result as? [String: AnyObject] {
+                let info = ChannelInfo(dictionary: result)
+                completion(info: info)
+            }
+            }) { (task, error) in
+                print(error)
+        }
     }
 
     private func channelsFromIds(ids: [Int]) -> [Channel] {

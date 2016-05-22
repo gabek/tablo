@@ -15,7 +15,14 @@ import AVKit
 
 class ChannelSelectionViewController: UIViewController {
     var collectionView: UICollectionView!
-    var channels: [Channel]?
+    var channels: [Channel]? {
+        didSet {
+            getNowPlayingInfo()
+        }
+    }
+    
+    var nowPlayingInfo = [Int:ChannelInfo]()
+    
     let tabloManager = TabloManager()
     
     override func viewDidLoad() {
@@ -43,6 +50,30 @@ class ChannelSelectionViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if channels != nil && nowPlayingInfo.count > 0 {
+            getNowPlayingInfo()
+        }
+    }
+    
+    private func getNowPlayingInfo() {
+        guard let channels = channels else {
+            return
+        }
+        
+        for channel in channels {
+            tabloManager.nowPlayingOnStation(channel.id, completion: { (info) in
+                self.nowPlayingInfo[channel.id] = info
+                
+                if self.nowPlayingInfo.count == channels.count {
+                    self.collectionView.reloadData()
+                }
+            })
+        }
+    }
+    
     private var didSetupConstraints = false
     override func updateViewConstraints() {
         if !didSetupConstraints {
@@ -60,15 +91,12 @@ extension ChannelSelectionViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let channels = channels {
             let channel = channels[indexPath.item]
-            let vc = AVPlayerViewController()
+            let vc = VideoViewController()
             navigationController?.pushViewController(vc, animated: true)
             
             let id = channel.id
             tabloManager.getStreamForStationId(id, completion: { (stream) in
-                print(stream)
-                
-                vc.player = AVPlayer(URL: NSURL(string: stream)!)
-                vc.player?.play()
+                vc.play(NSURL(string: stream)!)
             })
         }
     }
@@ -89,6 +117,13 @@ extension ChannelSelectionViewController: UICollectionViewDataSource {
         if let channels = channels {
             let channel = channels[indexPath.item]
             cell.imageView.setImageWithURL(NSURL(string: channel.image)!)
+
+            if let info = nowPlayingInfo[channel.id], url = info.programImage {
+                cell.imageView.setImageWithURL(NSURL(string: url)!)
+                cell.titleLabel.text = info.name
+            } else if let name = channel.title {
+                cell.titleLabel.text = name
+            }
         }
         
         return cell
