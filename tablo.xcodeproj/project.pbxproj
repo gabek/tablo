@@ -16,6 +16,7 @@
 		A0452FD81CF167890026828B /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0452FD71CF167890026828B /* ChannelCell.swift */; };
 		A0452FDC1CF168510026828B /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0452FDB1CF168510026828B /* Channel.swift */; };
 		A0452FDE1CF168BA0026828B /* TabloManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0452FDD1CF168BA0026828B /* TabloManager.swift */; };
+		A0AB5BD81CF544F90092E3DD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AB5BD71CF544F90092E3DD /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		A0452FD71CF167890026828B /* ChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		A0452FDB1CF168510026828B /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		A0452FDD1CF168BA0026828B /* TabloManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabloManager.swift; sourceTree = "<group>"; };
+		A0AB5BD71CF544F90092E3DD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E5D0D5A2FB57F8D4BE6700AF /* Pods-tablo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tablo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tablo/Pods-tablo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 				A0452FDD1CF168BA0026828B /* TabloManager.swift */,
 				A04397941CF24F2700F761ED /* VideoViewController.swift */,
 				A04397961CF2585900F761ED /* ChannelInfo.swift */,
+				A0AB5BD71CF544F90092E3DD /* Constants.swift */,
 			);
 			path = tablo;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				A0452FD81CF167890026828B /* ChannelCell.swift in Sources */,
 				A04397971CF2585900F761ED /* ChannelInfo.swift in Sources */,
 				A0452F571CEA095C0026828B /* AppDelegate.swift in Sources */,
+				A0AB5BD81CF544F90092E3DD /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

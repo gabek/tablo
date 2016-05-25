@@ -46,7 +46,7 @@ struct ChannelInfo {
     private func getImageFromDictionary(dictionary: [String:AnyObject]) -> String? {
         if let images = dictionary["imageJson"]?["images"] as? Array<[String:AnyObject]> {
             let programImageId = images.last!["imageID"] as! Int
-            return  "http://10.0.1.74/stream/thumb?id=\(programImageId)&h=1460776179813"
+            return  "\(Constants.device)/stream/thumb?id=\(programImageId)&h=1460776179813"
         }
 
         return nil

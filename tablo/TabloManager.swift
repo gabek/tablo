@@ -10,7 +10,6 @@ import Foundation
 import AFNetworking
 
 struct TabloManager {
-    let device = "http://10.0.1.74"
     let manager = AFHTTPSessionManager()
 
     init() {
@@ -18,7 +17,7 @@ struct TabloManager {
     }
     
     func getStations(completion: (channels: [Channel]) -> Void) {
-        let url = device + ":18080/plex/ch_ids"
+        let url = Constants.device + ":18080/plex/ch_ids"
         
         manager.GET(url, parameters: nil, progress: nil, success: { (task, result) in
             // Success            
@@ -51,13 +50,14 @@ struct TabloManager {
     }
     
     func getStreamForStationId(id: Int, completion: (stream: String) -> Void) {
-        let url = device + ":8886/"
+        let url = Constants.device + ":8886/"
         let params = ["channelid": id]
         let command = ["jsonrpc": 2.0, "id": 1, "method": "/player/watchLive", "params": params]
         
         manager.POST(url, parameters: command, progress: nil, success: { (task, result) in
             if let result = result, stream = result["result"]??["relativePlaylistURL"] as? String {
-                let fullStream = self.device + stream
+                let fullStream = Constants.device + stream
+                print(fullStream)
                 completion(stream: fullStream)
             }
             
@@ -68,7 +68,7 @@ struct TabloManager {
     }
     
     private func getStationNameForId(id: Int, completion: (name: String) -> Void) {
-        let url = device + ":18080/plex/ch_info?id=" + String(id)
+        let url = Constants.device + ":18080/plex/ch_info?id=" + String(id)
         
         manager.GET(url, parameters: nil, progress: nil, success: { (task, result) in
             guard let metadata = result?["meta"] else {
@@ -88,7 +88,7 @@ struct TabloManager {
     }
     
     func nowPlayingOnStation(id: Int, completion: (info: ChannelInfo) -> Void) {
-        let url = device + ":18080/plex/ch_epg?id=" + String(id)
+        let url = Constants.device + ":18080/plex/ch_epg?id=" + String(id)
         
         manager.GET(url, parameters: nil, progress: nil, success: { (task, result) in
             if let result = result as? [String: AnyObject] {
